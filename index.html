@@ -104,6 +104,10 @@
             rocketX += rocketSpeedX;
             rocketY += rocketSpeedY;
 
+            // Adjust rocket position to stay within screen boundaries
+            rocketX = Math.max(rocketSize / 2, Math.min(WIDTH - rocketSize / 2, rocketX));
+            rocketY = Math.max(rocketSize / 2, Math.min(HEIGHT - rocketSize / 2, rocketY));
+
             // Draw rocket
             ctx.drawImage(rocketImg, rocketX - rocketSize / 2, rocketY - rocketSize / 2, rocketSize, rocketSize);
 
